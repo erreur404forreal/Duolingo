@@ -11,13 +11,22 @@ const styles = StyleSheet.create({
         alignItems: "center",
         padding: 10,
     },
+    optionSelectedContainer: {
+        backgroundColor: "#DDF4FE",
+        borderColor: "#81D5FE"
+    },
     optionImage: {
 
         width: "100%",
         flex: 1,
     },
     optionText: {
-
+        color: "#fff",
+        fontWeight: "bold"
+    },
+    optionSelectedText: {
+        color: "#40BEF7",
+        fontWeight: "bold"
     }
 
   });
