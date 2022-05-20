@@ -1,5 +1,6 @@
 import React from "react";
 import { Text,View, Image } from "react-native";
+import propTypes from "prop-types";
 import styles from "./styles";
 
 const ImageOption = ({image, text}) => (
@@ -13,4 +14,10 @@ const ImageOption = ({image, text}) => (
       <Text Text style={styles.optionText}>{text}</Text>
     </View>
   );
+
+  ImageOption.propTypes = {
+      image: propTypes.string.isRequired,
+      text: propTypes.string.isRequired,
+  };
+  
 export default ImageOption;
