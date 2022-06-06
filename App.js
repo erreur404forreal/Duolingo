@@ -3,10 +3,15 @@ import { Text,View, Image, TextInput } from "react-native";
 import styles from "./App.styles";
 import ImageOption from "./src/components/ImageOption/";
 import question from "./assets/data/oneQuestionWithOption";
+import Button from "./src/components/Button";
 
 const App = () =>{
 
   const [selected, setSelected] = useState(null);
+
+  const onButtonPress = () => {
+    console.warn("Button Pressed");
+  };
 
 
   return (
@@ -25,6 +30,7 @@ const App = () =>{
         )}
         
       </View>
+      <Button text="Check" onPress={onButtonPress} disabled={!selected}/> 
     </View>
   );
 }
