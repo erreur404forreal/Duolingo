@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     optionText: {
-        color: "#fff",
+        color: "#000",
         fontWeight: "bold"
     },
     optionSelectedText: {
