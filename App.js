@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Text,View, Image, TextInput, Alert } from "react-native";
 import styles from "./App.styles";
 import ImageOption from "./src/components/ImageOption/";
-import questions from "./assets/data/imageMulatipleChoiceQuestions";
 import Button from "./src/components/Button";
 import ImageMultipleChoiceQuestion from "./src/components/ImageMultipleChoiceQuestion";
+import OpenEndedQuestion from "./src/components/OpenEndedQuestion";
+
+// import questions from "./assets/data/imageMulatipleChoiceQuestions";
+import questions from "./assets/data/openEndedQuestions";
 
 const App = () =>{
 
@@ -31,7 +34,12 @@ const onIncorrect = () => {
 
   return (
     <View style={styles.root}>
-       <ImageMultipleChoiceQuestion 
+       {/* <ImageMultipleChoiceQuestion 
+        question={currentQuestion}
+        onCorrect={onCorrect}
+        onIncorrect={onIncorrect}
+      /> */}
+      <OpenEndedQuestion 
         question={currentQuestion}
         onCorrect={onCorrect}
         onIncorrect={onIncorrect}
