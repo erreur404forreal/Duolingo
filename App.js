@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Text,View, Image, TextInput, Alert } from "react-native";
+import { View , Alert, SafeAreaView } from "react-native";
 import styles from "./App.styles";
-import ImageOption from "./src/components/ImageOption/";
-import Button from "./src/components/Button";
 import ImageMultipleChoiceQuestion from "./src/components/ImageMultipleChoiceQuestion";
 import OpenEndedQuestion from "./src/components/OpenEndedQuestion";
+import Header from "./src/components/Header";
 
-// import questions from "./assets/data/imageMulatipleChoiceQuestions";
+
 import questions from "./assets/data/allQuestions";
 
 const App = () =>{
@@ -33,7 +32,9 @@ const onIncorrect = () => {
 }
 
   return (
+    <SafeAreaView style={styles.container}>
     <View style={styles.root}>
+      <Header progress={currentQuestionIndex / questions.length}/>
        {currentQuestion.type == "IMAGE_MULTIPLE_CHOICE" && <ImageMultipleChoiceQuestion 
         question={currentQuestion}
         onCorrect={onCorrect}
@@ -45,6 +46,7 @@ const onIncorrect = () => {
         onIncorrect={onIncorrect}
       />}
     </View>
+    </SafeAreaView>
   );
 }
 

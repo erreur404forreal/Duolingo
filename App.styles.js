@@ -7,7 +7,10 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         padding: 10,
         paddingTop: 20
-    }
+    },
+    container: {
+        flex: 1,
+      }
 
   });
 
