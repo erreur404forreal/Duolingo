@@ -7,7 +7,7 @@ import ImageMultipleChoiceQuestion from "./src/components/ImageMultipleChoiceQue
 import OpenEndedQuestion from "./src/components/OpenEndedQuestion";
 
 // import questions from "./assets/data/imageMulatipleChoiceQuestions";
-import questions from "./assets/data/openEndedQuestions";
+import questions from "./assets/data/allQuestions";
 
 const App = () =>{
 
@@ -34,16 +34,16 @@ const onIncorrect = () => {
 
   return (
     <View style={styles.root}>
-       {/* <ImageMultipleChoiceQuestion 
+       {currentQuestion.type == "IMAGE_MULTIPLE_CHOICE" && <ImageMultipleChoiceQuestion 
         question={currentQuestion}
         onCorrect={onCorrect}
         onIncorrect={onIncorrect}
-      /> */}
-      <OpenEndedQuestion 
+      />}
+      {currentQuestion.type == "OPEN_ENDED" && <OpenEndedQuestion 
         question={currentQuestion}
         onCorrect={onCorrect}
         onIncorrect={onIncorrect}
-      />
+      />}
     </View>
   );
 }

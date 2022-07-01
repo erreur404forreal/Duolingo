@@ -2,19 +2,50 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({ 
     title: {
-        fontSize: 20,
+        fontSize: 18,
         fontWeight: "bold",
-        alignSelf: "stretch"
+        alignSelf: "flex-start",
     },
-    optionsContainer: {
-        width: "100%",
-        flex: 1,
+    row: {
         flexDirection: "row",
-        flexWrap: "wrap",
-        justifyContent: "space-between",
-        alignContent: "space-between",
+        alignSelf: "stretch",
+        alignItems: "center",
 
+        margin: 10,
+        marginBottom: 0
+    },
+    mascot: {
+        width: "30%",
+        aspectRatio: 3/4,
+        marginRight: 10,
+    },
+    sentenceContainer: {
+        borderWidth: 1,
+        borderColor: "lightgrey",
+        borderRadius: 5,
+
+        padding: 10,
+    },
+    sentence: {
+        fontSize: 16,
+    },
+    textInput: {
+        backgroundColor: "#ebebeb",
+        alignSelf: "stretch",
+        flex: 1,
+
+        borderWidth: 1,
+        borderColor: "lightgrey", 
+        borderRadius: 10,
+
+        padding: 10,
+        fontSize: 16
+    },
+    fullContainer: {
+        width: "100%",
+        height: "100%",
     }
+
 
   });
 
