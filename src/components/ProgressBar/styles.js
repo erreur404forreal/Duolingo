@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         height: 5,
         borderRadius: 5,
         alignSelf: 'center',
-        marginTop: 5 
+        marginTop: 5
     }
 
 

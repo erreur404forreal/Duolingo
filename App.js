@@ -13,6 +13,7 @@ const App = () =>{
   const [selected, setSelected] = useState(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(questions[currentQuestionIndex]);
+  const [lives, setLives] = useState(5)
 
   useEffect(() => {
     if(currentQuestionIndex >= questions.length) {
@@ -27,14 +28,30 @@ const onCorrect = () => {
   setCurrentQuestionIndex(currentQuestionIndex + 1);
 }
 
+const restart = () => {
+  setLives(5);
+  setCurrentQuestionIndex(0);
+}
+
 const onIncorrect = () => {
-  Alert.alert("Wrong answer ! 😏 ");
+  if(lives <= 1) {
+    Alert.alert("Game over 😭 ", "Try again", [
+      {
+        text: "Try again",
+        onPress: restart,
+      },
+    ]);
+
+  } else {
+    Alert.alert("Wrong answer ! 😏 ");
+    setLives(lives - 1);
+  }
 }
 
   return (
     <SafeAreaView style={styles.container}>
     <View style={styles.root}>
-      <Header progress={currentQuestionIndex / questions.length}/>
+      <Header progress={currentQuestionIndex / questions.length} lives={lives} />
        {currentQuestion.type == "IMAGE_MULTIPLE_CHOICE" && <ImageMultipleChoiceQuestion 
         question={currentQuestion}
         onCorrect={onCorrect}
